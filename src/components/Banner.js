@@ -9,7 +9,7 @@ export function Banner(props) {
 
     useEffect(() => {
 
-         fetch(`http://0.0.0.0:3004/posts?page=${page}&size=${props.size}`)
+         fetch(`http://localhost:3004/posts?page=${page}&size=${props.size}`)
         .then(res=> res.json())
         .then(json=>setArticles([...articles,...json.result]))
 
@@ -37,9 +37,9 @@ const scrollToEnd = ()=>{
 
                     <div className="BannerArea">
                         <div className="row">
-                            {articles.map((ele) => {
+                            {articles.map((ele,idx) => {
 
-                                return <div className="col-lg-6 col-sm-12">
+                                return <div key={`element${idx}`} className="col-lg-6 col-sm-12">
                                     <Post title={ele.title} content={ele.content} />
                                 </div>
                             })}

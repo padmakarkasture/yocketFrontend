@@ -7,7 +7,7 @@ export function Post(props) {
             <div className="card" >
                 <img src={logo} className="card-img-top" alt="" />
                 <div className="card-body">
-                    <h5 class="card-title">{props.title}</h5>
+                    <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">{props.content}</p>
                 </div>
             </div>
